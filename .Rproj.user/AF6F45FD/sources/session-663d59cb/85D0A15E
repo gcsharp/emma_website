@@ -3,7 +3,7 @@
     "path": "~/Library/CloudStorage/OneDrive-UniversityofExeter/Dissertations/diary_test/emma_website/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "1247442824",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1681483337442.0,
@@ -12,8 +12,13 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "1,8",
-        "scrollLine": "0"
+        "cursorPosition": "67,97",
+        "scrollLine": "62",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "7576:2263.5"
     },
     "folds": "",
     "lastKnownWriteTime": 1681483452,
