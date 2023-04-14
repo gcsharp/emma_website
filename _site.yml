@@ -1,0 +1,15 @@
+name: "EMMA: a study of Women's Health by the University of Exeter"
+navbar:
+  title: "EMMA: a study of Women's Health by the University of Exeter"
+  left:
+    - text: "About the study"
+      href: index.html
+    - text: "Register"
+      href: initial.html
+    - text: "Final questionnaire"
+      href: final.html
+output_dir: "docs"
+output:
+  html_document:
+    theme: lumen
+

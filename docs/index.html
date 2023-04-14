@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>index.knit</title>
+
+<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">EMMA: a study of Women's Health by the University of Exeter</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">About the study</a>
+</li>
+<li>
+  <a href="initial.html">Register</a>
+</li>
+<li>
+  <a href="final.html">Final questionnaire</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img src="exeter_logo.jpg" width="246" /></p>
+<div
+id="welcome-to-emma-a-study-of-womens-health-by-the-university-of-exeter"
+class="section level1">
+<h1><strong>Welcome to EMMA, a study of Women’s Health by the University
+of Exeter</strong></h1>
+<p>You are invited to take part in this academic research study. Before
+you decide whether or not to participate in this study, it is important
+that you understand why the research is being done and what it will
+involve. Please take the time to read the following information
+carefully.</p>
+<div id="purpose-of-the-research" class="section level2">
+<h2>Purpose of the research</h2>
+<p>Compared to research on men, there has been very little research on
+the health and wellbeing of women. There is an urgent need to bridge the
+gap by collecting more high quality data on women, and conducting more
+research to better understand how to maximise their health.</p>
+<p>The aim of the EMMA study is to establish whether it is feasible to
+use a technique called Ecological Momentary Assessment (EMA) to collect
+data on women’s health for future research. The technique involves using
+smart technology (a phone app and a smartwatch) to collect daily
+measures of health and wellbeing over a 3-month period.</p>
+<p>We want to see how well participants engage with the study, and
+understand their experiences of taking part. This will help us
+understand whether we need to make any changes to the study protocol
+before it is used in future research.</p>
+</div>
+<div id="who-is-doing-this-research" class="section level2">
+<h2>Who is doing this research?</h2>
+<p>The lead researcher of this study is Jessica Brookman, an MSc Student
+on the Psychological Research Methods course in the Psychology
+Department at the University of Exeter. This project is being supervised
+by Dr Gemma Sharp, Associate Professor at the University of Exeter.</p>
+</div>
+<div id="ethical-review-of-this-research" class="section level2">
+<h2>Ethical review of this research</h2>
+<p>This study has been reviewed and approved by the University of Exeter
+Research Ethics Committee. The Chairs of the Ethics Committee may be
+contacted by email: Ciro Civile (<a href="mailto:c.civile@ex.ac.uk"
+class="email">c.civile@ex.ac.uk</a>) or Ian McLaren (<a
+href="mailto:i.p.l.mclaren@ex.ac.uk"
+class="email">i.p.l.mclaren@ex.ac.uk</a>)</p>
+</div>
+<div id="what-participants-will-be-asked-to-do" class="section level2">
+<h2>What participants will be asked to do</h2>
+<p>The study will take place over a 3-month period, requiring daily
+input onto an mobile phone app (Mesmerise), which should take no more
+than 5 minutes, twice a day. You will also be asked to wear a smart
+watch (provided by the research team), to monitor your heart rate
+throughout the study. Therefore, you will need to be local to Exeter to
+enable to collection and return of this device (from the Washington
+Singer building, Streatham Campus, University of Exeter).</p>
+<p>On the next tab, you can check whether you’re eligible to participate
+in this study. If you are, you will be asked a series of short questions
+designed to gather data on your current physical and mental health. This
+should take no more than 10 minutes to complete.</p>
+<p>Once we have received this, we will contact you via email to confirm
+whether you still want to participate, and we will provide you with a
+link to download the Mesmerise smartphone app and join the study. On
+Mesmerise, you will be prompted twice a day to complete your daily
+questionnaires, and once a week to complete an additional short weekly
+questionnaire. Each questionniare should only take a couple of minutes.
+We will also arrange (via email) for you to collect a smartwatch. When
+you come to collect the smartwatch, we will explain how to use it to
+collect heart rate data. We will also explain how you can download the
+data and send it to us at the end of the study.</p>
+<p>At the end of the 3-month period, you will be asked to complete a
+final questionnaire, where we will ask for your honest feedback on what
+it was like to be a participant in this study. This will allow us to
+guide future research using similar methodology.</p>
+<p>All personal data collected will be anonymised and will not be
+traceable back to you. Data will be stored in line with GDPR guidelines,
+and you can opt-out of having your data stored if you so wish.</p>
+</div>
+<div id="payment-for-research" class="section level2">
+<h2>Payment for research</h2>
+<p>We estimate it will take no more than 10 minutes a day to complete
+the questionnaires, and the study lasts for three months. If you
+participate, you will receive a £10 Amazon voucher on completion. If you
+drop out of the study part way through, you will still receive this
+payment. However, if you drop out prior to beginning the EMA aspect of
+the study, no compensation will be provided.</p>
+</div>
+<div id="benefits-and-risks-of-taking-part" class="section level2">
+<h2>Benefits and risks of taking part</h2>
+<p>Participating in this study will aid future research into Women’s
+Health, with the hope of improving health outcomes for all women and
+people who menstruate. The present research will act as a guide for
+future research in this field, so participating in this research will
+enable us to learn what works for you as participants to make future
+research the best experience possible for participants whilst yielding
+good quality data.</p>
+<p>There are no direct risks involved with participating in this study.
+You should be aware that there is always a potential risk to
+confidentiality, but this will be mitigated by all data being anonymised
+and securely stored according to GDPR guidelines. Please note that it is
+extremely unlikely that there would be any breach of your data, but
+should this occur, you will be notified immediately.</p>
+</div>
+<div id="voluntary-participation-and-your-right-to-withdraw"
+class="section level2">
+<h2>Voluntary participation and your right to withdraw</h2>
+<p>Your participation in this study is entirely voluntary. You are under
+no obligation to take part and you may stop at any time.</p>
+</div>
+<div id="data-management" class="section level2">
+<h2>Data management</h2>
+<p>Your data will be fully anonymised prior to the project write-up.
+Data will be retained for up to 5 years in line with GDPR guidelines.
+Data may be used in future research into Women’s Health. It is most
+likely that the data from this project will be used only by the
+supervisor of the current project. Any other researchers wishing to use
+the Mesmerise data will be required to contact the supervisor. They will
+only be granted access if they are a bona fide researcher and their
+project is approved by the supervisor and the ethics committee. They
+will then sign a data transfer agreement that requires them to respect
+the confidential nature of the data and prevents further sharing and any
+attempt to identify the participants.</p>
+</div>
+<div id="anonymity" class="section level2">
+<h2>Anonymity</h2>
+<p>Your name and other contact details are collected by the Mesmerise
+app but are not supplied to the researchers. Your responses to this
+survey are therefore anonymous. They may contain some personal
+characteristics such as age, ethnicity and gender, but there will be no
+specific personal information such as name and contact details to
+identify you.</p>
+<p>In the initial questionnaire, you will be asked to provide an email
+address, which will enable us to link your initial questionnaire data to
+your Mesmerise responses and your response to the final questionnaire.
+When you communicate with the researcher via email (e.g. to arrange
+collection of the smartwatch), she will probably also have access to
+your name, but this will not be recorded anywhere in the research
+dataset.</p>
+<p>Therefore, the only identifiable data the researchers will have
+access to is your email address. Once data from the initial
+questionnaire, Mesmerise, and the final questionnaire are linked, email
+addresses will be deleted from the dataset and participants will be
+referred to using their unique ID provided by the Mesmerise app. A
+separate document will contain information linking the Mesmerise ID to
+the participant email address, but this will be kept separately from the
+research data and will never be shared. You can contact the researcher
+or supervisor to request that your data is deleted at any time.</p>
+<p>The Data Controller for this research is the University of Exeter.
+You may contact the Information Governance office of the University of
+Exeter by emailing (<a href="mailto:dataprotection@exeter.ac.uk"
+class="email">dataprotection@exeter.ac.uk</a>).</p>
+<p><a
+href="http://www.exeter.ac.uk/media/universityofexeter/governanceandcompliance/researchethicsandgovernance/UoE_Research_Generic_Privacy_Notice_v1.1_16012020.pdf">University
+of Exeter Data Protection for Research Statement</a></p>
+</div>
+<div id="the-results" class="section level2">
+<h2>The results</h2>
+<p>Results will be published or presented in academic papers and
+presentations. If you wish to be updated about the results of this study
+please email Jessica Brookman: (<a href="mailto:jlb255@exeter.ac.uk"
+class="email">jlb255@exeter.ac.uk</a>) or the supervisor of the project
+(<a href="mailto:g.c.sharp@exeter.ac.uk"
+class="email">g.c.sharp@exeter.ac.uk</a>).</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
