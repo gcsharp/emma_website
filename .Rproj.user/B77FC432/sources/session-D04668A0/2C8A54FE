@@ -1,31 +1,26 @@
 {
-    "id": "23673E36",
+    "id": "2C8A54FE",
     "path": "~/Library/CloudStorage/OneDrive-UniversityofExeter/Dissertations/diary_test/emma_website/final.Rmd",
     "project_path": "final.Rmd",
     "type": "r_markdown",
-    "hash": "418450915",
+    "hash": "1901129682",
     "contents": "",
     "dirty": false,
-    "created": 1681483336230.0,
+    "created": 1687164078776.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "1,8",
-        "scrollLine": "0",
-        "rmdVisualMode": "false",
-        "rmdVisualWrapConfigured": "true",
-        "docOutlineVisible": "1",
-        "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2:0"
+        "cursorPosition": "9,445",
+        "scrollLine": "6"
     },
     "folds": "",
-    "lastKnownWriteTime": 1681483449,
+    "lastKnownWriteTime": 1687164849,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1681483449147,
+    "last_content_update": 1687164849531,
     "read_only": false,
     "read_only_alternatives": []
 }
